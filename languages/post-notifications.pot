@@ -1,0 +1,219 @@
+# Copyright (C) 2025 Post Notifications
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Post Notifications 1.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/pedrocandeias/post-notifications/issues\n"
+"POT-Creation-Date: 2025-11-12 00:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Manual\n"
+
+#: post-notifications.php:101
+msgid "Post Notifications Settings"
+msgstr ""
+
+#: post-notifications.php:102
+msgid "Post Notifications"
+msgstr ""
+
+#: post-notifications.php:133
+msgid "Security check failed. Please try again."
+msgstr ""
+
+#: post-notifications.php:144
+msgid "You do not have permission to modify these settings."
+msgstr ""
+
+#: post-notifications.php:210
+msgid "Notification Types"
+msgstr ""
+
+#: post-notifications.php:223
+msgid "Post submitted for review (Pending)"
+msgstr ""
+
+#: post-notifications.php:231
+msgid "Post published"
+msgstr ""
+
+#: post-notifications.php:239
+msgid "Post saved as draft"
+msgstr ""
+
+#: post-notifications.php:247
+msgid "Post scheduled for future publication"
+msgstr ""
+
+#: post-notifications.php:255
+msgid "Published post updated"
+msgstr ""
+
+#: post-notifications.php:263
+msgid "Post moved to trash"
+msgstr ""
+
+#: post-notifications.php:271
+msgid "Recipient Roles"
+msgstr ""
+
+#: post-notifications.php:313
+msgid "WordPress Built-in Roles:"
+msgstr ""
+
+#: post-notifications.php:325
+#, php-format
+msgid "%d user"
+msgid_plural "%d users"
+msgstr[0] ""
+msgstr[1] ""
+
+#: post-notifications.php:338
+msgid "Custom Roles:"
+msgstr ""
+
+#: post-notifications.php:340
+msgid "(Added by plugins or theme)"
+msgstr ""
+
+#: post-notifications.php:362
+msgid "Select which user roles should receive email notifications. Custom roles are automatically detected."
+msgstr ""
+
+#: post-notifications.php:298
+msgid "Save Settings"
+msgstr ""
+
+#: post-notifications.php:362
+msgid "Unknown"
+msgstr ""
+
+#: post-notifications.php:424
+#: post-notifications.php:445
+msgid "(no title)"
+msgstr ""
+
+#: post-notifications.php:430
+#, php-format
+msgid "[%s] New post pending review: %s"
+msgstr ""
+
+#: post-notifications.php:431
+#, php-format
+msgid "[%s] Post published: %s"
+msgstr ""
+
+#: post-notifications.php:432
+#, php-format
+msgid "[%s] Post saved as draft: %s"
+msgstr ""
+
+#: post-notifications.php:433
+#, php-format
+msgid "[%s] Post scheduled: %s"
+msgstr ""
+
+#: post-notifications.php:434
+#, php-format
+msgid "[%s] Post updated: %s"
+msgstr ""
+
+#: post-notifications.php:435
+#, php-format
+msgid "[%s] Post trashed: %s"
+msgstr ""
+
+#: post-notifications.php:438
+#, php-format
+msgid "[%s] Post notification"
+msgstr ""
+
+#: post-notifications.php:452
+#, php-format
+msgid "<p>A new post has been submitted for review on <a href=\"%s\">%s</a>.</p>"
+msgstr ""
+
+#: post-notifications.php:456
+#: post-notifications.php:473
+#: post-notifications.php:489
+#: post-notifications.php:505
+#: post-notifications.php:523
+#: post-notifications.php:539
+#, php-format
+msgid "<p><strong>Title:</strong> %s</p>"
+msgstr ""
+
+#: post-notifications.php:460
+#: post-notifications.php:477
+#: post-notifications.php:493
+#: post-notifications.php:509
+#: post-notifications.php:527
+#: post-notifications.php:543
+#, php-format
+msgid "<p><strong>Author:</strong> %s</p>"
+msgstr ""
+
+#: post-notifications.php:463
+msgid "<p><strong>Status:</strong> Pending Review</p>"
+msgstr ""
+
+#: post-notifications.php:465
+msgid "<p><a href=\"%s\">Review and approve this post</a></p>"
+msgstr ""
+
+#: post-notifications.php:469
+#, php-format
+msgid "<p>A post has been published on <a href=\"%s\">%s</a>.</p>"
+msgstr ""
+
+#: post-notifications.php:480
+#: post-notifications.php:530
+#, php-format
+msgid "<p><a href=\"%s\">View post</a> | <a href=\"%s\">Edit post</a></p>"
+msgstr ""
+
+#: post-notifications.php:485
+#, php-format
+msgid "<p>A post has been saved as draft on <a href=\"%s\">%s</a>.</p>"
+msgstr ""
+
+#: post-notifications.php:496
+msgid "<p><a href=\"%s\">Edit draft</a></p>"
+msgstr ""
+
+#: post-notifications.php:500
+#, php-format
+msgid "<p>A post has been scheduled for publication on <a href=\"%s\">%s</a>.</p>"
+msgstr ""
+
+#: post-notifications.php:512
+#, php-format
+msgid "<p><strong>Scheduled for:</strong> %s</p>"
+msgstr ""
+
+#: post-notifications.php:514
+msgid "<p><a href=\"%s\">Edit post</a></p>"
+msgstr ""
+
+#: post-notifications.php:518
+#, php-format
+msgid "<p>A published post has been updated on <a href=\"%s\">%s</a>.</p>"
+msgstr ""
+
+#: post-notifications.php:534
+#, php-format
+msgid "<p>A post has been moved to trash on <a href=\"%s\">%s</a>.</p>"
+msgstr ""
+
+#: post-notifications.php:545
+msgid "<p><a href=\"%s\">View trashed posts</a></p>"
+msgstr ""
+
+#: post-notifications.php:556
+msgid "This is an automated notification from Post Notifications plugin."
+msgstr ""
