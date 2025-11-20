@@ -109,7 +109,7 @@ class Post_Notifications {
      */
     public function load_textdomain() {
         load_plugin_textdomain(
-            'post-notifications',
+            'wp-site-notifications',
             false,
             dirname(plugin_basename(__FILE__)) . '/languages/'
         );

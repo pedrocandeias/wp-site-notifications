@@ -15,12 +15,12 @@ if (!defined('ABSPATH')) {
 <table class="form-table" role="presentation">
     <tr>
         <th scope="row">
-            <label><?php _e('Notification Types', 'post-notifications'); ?></label>
+            <label><?php _e('Notification Types', 'wp-site-notifications'); ?></label>
         </th>
         <td>
             <fieldset>
                 <legend class="screen-reader-text">
-                    <span><?php _e('Notification Types', 'post-notifications'); ?></span>
+                    <span><?php _e('Notification Types', 'wp-site-notifications'); ?></span>
                 </legend>
 
                 <label>
@@ -28,7 +28,7 @@ if (!defined('ABSPATH')) {
                            name="post_notifications_settings[enabled_notifications][pending]"
                            value="1"
                            <?php checked(isset($enabled_notifications['pending']) && $enabled_notifications['pending'] == '1'); ?>>
-                    <?php _e('Post submitted for review (Pending)', 'post-notifications'); ?>
+                    <?php _e('Post submitted for review (Pending)', 'wp-site-notifications'); ?>
                 </label><br>
 
                 <label>
@@ -36,7 +36,7 @@ if (!defined('ABSPATH')) {
                            name="post_notifications_settings[enabled_notifications][published]"
                            value="1"
                            <?php checked(isset($enabled_notifications['published']) && $enabled_notifications['published'] == '1'); ?>>
-                    <?php _e('Post published', 'post-notifications'); ?>
+                    <?php _e('Post published', 'wp-site-notifications'); ?>
                 </label><br>
 
                 <label>
@@ -44,7 +44,7 @@ if (!defined('ABSPATH')) {
                            name="post_notifications_settings[enabled_notifications][draft]"
                            value="1"
                            <?php checked(isset($enabled_notifications['draft']) && $enabled_notifications['draft'] == '1'); ?>>
-                    <?php _e('Post saved as draft', 'post-notifications'); ?>
+                    <?php _e('Post saved as draft', 'wp-site-notifications'); ?>
                 </label><br>
 
                 <label>
@@ -52,7 +52,7 @@ if (!defined('ABSPATH')) {
                            name="post_notifications_settings[enabled_notifications][scheduled]"
                            value="1"
                            <?php checked(isset($enabled_notifications['scheduled']) && $enabled_notifications['scheduled'] == '1'); ?>>
-                    <?php _e('Post scheduled for future publication', 'post-notifications'); ?>
+                    <?php _e('Post scheduled for future publication', 'wp-site-notifications'); ?>
                 </label><br>
 
                 <label>
@@ -60,7 +60,7 @@ if (!defined('ABSPATH')) {
                            name="post_notifications_settings[enabled_notifications][updated]"
                            value="1"
                            <?php checked(isset($enabled_notifications['updated']) && $enabled_notifications['updated'] == '1'); ?>>
-                    <?php _e('Published post updated', 'post-notifications'); ?>
+                    <?php _e('Published post updated', 'wp-site-notifications'); ?>
                 </label><br>
 
                 <label>
@@ -68,7 +68,7 @@ if (!defined('ABSPATH')) {
                            name="post_notifications_settings[enabled_notifications][trashed]"
                            value="1"
                            <?php checked(isset($enabled_notifications['trashed']) && $enabled_notifications['trashed'] == '1'); ?>>
-                    <?php _e('Post moved to trash', 'post-notifications'); ?>
+                    <?php _e('Post moved to trash', 'wp-site-notifications'); ?>
                 </label>
             </fieldset>
         </td>
@@ -76,12 +76,12 @@ if (!defined('ABSPATH')) {
 
     <tr>
         <th scope="row">
-            <label><?php _e('Recipient Roles', 'post-notifications'); ?></label>
+            <label><?php _e('Recipient Roles', 'wp-site-notifications'); ?></label>
         </th>
         <td>
             <fieldset>
                 <legend class="screen-reader-text">
-                    <span><?php _e('Recipient Roles', 'post-notifications'); ?></span>
+                    <span><?php _e('Recipient Roles', 'wp-site-notifications'); ?></span>
                 </legend>
                 <?php
                 // Get all roles including custom ones
@@ -107,9 +107,8 @@ if (!defined('ABSPATH')) {
                 if (!empty($builtin_list)) :
                 ?>
                     <div style="margin-bottom: 15px;">
-                        <strong style="display: block; margin-bottom: 8px;"><?php _e('WordPress Built-in Roles:', 'post-notifications'); ?></strong>
+                        <strong style="display: block; margin-bottom: 8px;"><?php _e('WordPress Built-in Roles:', 'wp-site-notifications'); ?></strong>
                         <?php foreach ($builtin_list as $role_key => $role_name) :
-                            $role_obj = $wp_roles_obj->get_role($role_key);
                             $user_count = count(get_users(array('role' => $role_key, 'fields' => 'ID')));
                         ?>
                             <label style="display: block; margin-bottom: 5px;">
@@ -119,7 +118,7 @@ if (!defined('ABSPATH')) {
                                        <?php checked(in_array($role_key, $recipient_roles)); ?>>
                                 <?php echo esc_html($role_name); ?>
                                 <span style="color: #666; font-size: 0.9em;">
-                                    (<?php echo esc_html(sprintf(_n('%d user', '%d users', $user_count, 'post-notifications'), $user_count)); ?>)
+                                    (<?php echo esc_html(sprintf(_n('%d user', '%d users', $user_count, 'wp-site-notifications'), $user_count)); ?>)
                                 </span>
                             </label>
                         <?php endforeach; ?>
@@ -132,13 +131,12 @@ if (!defined('ABSPATH')) {
                 ?>
                     <div style="margin-bottom: 10px; padding: 10px; background: #f0f8ff; border-left: 4px solid #0073aa;">
                         <strong style="display: block; margin-bottom: 8px;">
-                            <?php _e('Custom Roles:', 'post-notifications'); ?>
+                            <?php _e('Custom Roles:', 'wp-site-notifications'); ?>
                             <span style="color: #0073aa; font-weight: normal; font-size: 0.9em;">
-                                <?php _e('(Added by plugins or theme)', 'post-notifications'); ?>
+                                <?php _e('(Added by plugins or theme)', 'wp-site-notifications'); ?>
                             </span>
                         </strong>
                         <?php foreach ($custom_list as $role_key => $role_name) :
-                            $role_obj = $wp_roles_obj->get_role($role_key);
                             $user_count = count(get_users(array('role' => $role_key, 'fields' => 'ID')));
                         ?>
                             <label style="display: block; margin-bottom: 5px;">
@@ -148,7 +146,7 @@ if (!defined('ABSPATH')) {
                                        <?php checked(in_array($role_key, $recipient_roles)); ?>>
                                 <?php echo esc_html($role_name); ?>
                                 <span style="color: #666; font-size: 0.9em;">
-                                    (<?php echo esc_html(sprintf(_n('%d user', '%d users', $user_count, 'post-notifications'), $user_count)); ?>)
+                                    (<?php echo esc_html(sprintf(_n('%d user', '%d users', $user_count, 'wp-site-notifications'), $user_count)); ?>)
                                 </span>
                             </label>
                         <?php endforeach; ?>
@@ -156,7 +154,7 @@ if (!defined('ABSPATH')) {
                 <?php endif; ?>
 
                 <p class="description">
-                    <?php _e('Select which user roles should receive email notifications. Custom roles are automatically detected.', 'post-notifications'); ?>
+                    <?php _e('Select which user roles should receive email notifications. Custom roles are automatically detected.', 'wp-site-notifications'); ?>
                 </p>
             </fieldset>
         </td>
@@ -164,17 +162,17 @@ if (!defined('ABSPATH')) {
 
     <tr>
         <th scope="row">
-            <label><?php _e('Individual Users', 'post-notifications'); ?></label>
+            <label><?php _e('Individual Users', 'wp-site-notifications'); ?></label>
         </th>
         <td>
             <fieldset>
                 <legend class="screen-reader-text">
-                    <span><?php _e('Individual Users', 'post-notifications'); ?></span>
+                    <span><?php _e('Individual Users', 'wp-site-notifications'); ?></span>
                 </legend>
 
                 <input type="text"
                        id="post-notifications-user-search"
-                       placeholder="<?php esc_attr_e('Search users...', 'post-notifications'); ?>"
+                       placeholder="<?php esc_attr_e('Search users...', 'wp-site-notifications'); ?>"
                        style="width: 100%; max-width: 400px; margin-bottom: 10px; padding: 5px;">
 
                 <div id="post-notifications-user-list" style="max-height: 300px; overflow-y: auto; border: 1px solid #ddd; padding: 10px; background: #fff;">
@@ -197,7 +195,7 @@ if (!defined('ABSPATH')) {
                                     $role_names[] = isset($wp_roles->role_names[$role_key]) ? translate_user_role($wp_roles->role_names[$role_key]) : $role_key;
                                 }
                             }
-                            $role_display = !empty($role_names) ? implode(', ', $role_names) : __('No role', 'post-notifications');
+                            $role_display = !empty($role_names) ? implode(', ', $role_names) : __('No role', 'wp-site-notifications');
                     ?>
                         <label class="post-notifications-user-item"
                                data-name="<?php echo esc_attr(strtolower($user->display_name)); ?>"
@@ -220,12 +218,12 @@ if (!defined('ABSPATH')) {
                         endforeach;
                     else :
                     ?>
-                        <p><?php _e('No users found.', 'post-notifications'); ?></p>
+                        <p><?php _e('No users found.', 'wp-site-notifications'); ?></p>
                     <?php endif; ?>
                 </div>
 
                 <p class="description" style="margin-top: 10px;">
-                    <?php _e('Select individual users who should receive notifications in addition to users selected by role. These users will receive notifications regardless of their role.', 'post-notifications'); ?>
+                    <?php _e('Select individual users who should receive notifications in addition to users selected by role. These users will receive notifications regardless of their role.', 'wp-site-notifications'); ?>
                 </p>
             </fieldset>
         </td>
@@ -233,12 +231,12 @@ if (!defined('ABSPATH')) {
 
     <tr>
         <th scope="row">
-            <label><?php _e('Post Types', 'post-notifications'); ?></label>
+            <label><?php _e('Post Types', 'wp-site-notifications'); ?></label>
         </th>
         <td>
             <fieldset>
                 <legend class="screen-reader-text">
-                    <span><?php _e('Post Types', 'post-notifications'); ?></span>
+                    <span><?php _e('Post Types', 'wp-site-notifications'); ?></span>
                 </legend>
                 <?php
                 // Get all public post types
@@ -263,7 +261,7 @@ if (!defined('ABSPATH')) {
                 if (!empty($builtin_list)) :
                 ?>
                     <div style="margin-bottom: 15px;">
-                        <strong style="display: block; margin-bottom: 8px;"><?php _e('WordPress Built-in Post Types:', 'post-notifications'); ?></strong>
+                        <strong style="display: block; margin-bottom: 8px;"><?php _e('WordPress Built-in Post Types:', 'wp-site-notifications'); ?></strong>
                         <?php foreach ($builtin_list as $post_type_key => $post_type_obj) :
                             $count_posts = wp_count_posts($post_type_key);
                             $total_posts = 0;
@@ -278,7 +276,7 @@ if (!defined('ABSPATH')) {
                                        <?php checked(in_array($post_type_key, $enabled_post_types)); ?>>
                                 <?php echo esc_html($post_type_obj->labels->name); ?>
                                 <span style="color: #666; font-size: 0.9em;">
-                                    (<?php echo esc_html(sprintf(_n('%d item', '%d items', $total_posts, 'post-notifications'), $total_posts)); ?>)
+                                    (<?php echo esc_html(sprintf(_n('%d item', '%d items', $total_posts, 'wp-site-notifications'), $total_posts)); ?>)
                                 </span>
                             </label>
                         <?php endforeach; ?>
@@ -291,9 +289,9 @@ if (!defined('ABSPATH')) {
                 ?>
                     <div style="margin-bottom: 10px; padding: 10px; background: #f0f8ff; border-left: 4px solid #0073aa;">
                         <strong style="display: block; margin-bottom: 8px;">
-                            <?php _e('Custom Post Types:', 'post-notifications'); ?>
+                            <?php _e('Custom Post Types:', 'wp-site-notifications'); ?>
                             <span style="color: #0073aa; font-weight: normal; font-size: 0.9em;">
-                                <?php _e('(Added by plugins or theme)', 'post-notifications'); ?>
+                                <?php _e('(Added by plugins or theme)', 'wp-site-notifications'); ?>
                             </span>
                         </strong>
                         <?php foreach ($custom_list as $post_type_key => $post_type_obj) :
@@ -310,7 +308,7 @@ if (!defined('ABSPATH')) {
                                        <?php checked(in_array($post_type_key, $enabled_post_types)); ?>>
                                 <?php echo esc_html($post_type_obj->labels->name); ?>
                                 <span style="color: #666; font-size: 0.9em;">
-                                    (<?php echo esc_html(sprintf(_n('%d item', '%d items', $total_posts, 'post-notifications'), $total_posts)); ?>)
+                                    (<?php echo esc_html(sprintf(_n('%d item', '%d items', $total_posts, 'wp-site-notifications'), $total_posts)); ?>)
                                 </span>
                             </label>
                         <?php endforeach; ?>
@@ -318,7 +316,7 @@ if (!defined('ABSPATH')) {
                 <?php endif; ?>
 
                 <p class="description">
-                    <?php _e('Select which post types should trigger notifications. Both standard and custom post types are shown.', 'post-notifications'); ?>
+                    <?php _e('Select which post types should trigger notifications. Both standard and custom post types are shown.', 'wp-site-notifications'); ?>
                 </p>
             </fieldset>
         </td>

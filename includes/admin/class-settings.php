@@ -58,7 +58,7 @@ class Post_Notifications_Settings {
             add_settings_error(
                 'post_notifications_settings',
                 'nonce_failed',
-                __('Security check failed. Please try again.', 'post-notifications'),
+                __('Security check failed. Please try again.', 'wp-site-notifications'),
                 'error'
             );
             return get_option('post_notifications_settings', array());
@@ -69,7 +69,7 @@ class Post_Notifications_Settings {
             add_settings_error(
                 'post_notifications_settings',
                 'permission_denied',
-                __('You do not have permission to modify these settings.', 'post-notifications'),
+                __('You do not have permission to modify these settings.', 'wp-site-notifications'),
                 'error'
             );
             return get_option('post_notifications_settings', array());

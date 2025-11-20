@@ -151,7 +151,7 @@ class Admin_Notifications_Handler {
         $message .= '<li><strong>' . __('Display Name:', 'wp-site-notifications') . '</strong> ' . esc_html($user->display_name) . '</li>';
         $message .= '<li><strong>' . __('Date:', 'wp-site-notifications') . '</strong> ' . current_time('mysql') . '</li>';
         $message .= '</ul>';
-        $message .= '<p><a href="' . admin_url('user-edit.php?user_id=' . $user_id) . '">' . __('View User Profile', 'wp-site-notifications') . '</a></p>';
+        $message .= '<p><a href="' . esc_url(admin_url('user-edit.php?user_id=' . $user_id)) . '">' . __('View User Profile', 'wp-site-notifications') . '</a></p>';
 
         $this->send_notification('user_registered', $subject, $message);
     }
@@ -205,7 +205,7 @@ class Admin_Notifications_Handler {
         $message .= '<li><strong>' . __('New Role:', 'wp-site-notifications') . '</strong> ' . esc_html($new_role_name) . '</li>';
         $message .= '<li><strong>' . __('Date:', 'wp-site-notifications') . '</strong> ' . current_time('mysql') . '</li>';
         $message .= '</ul>';
-        $message .= '<p><a href="' . admin_url('user-edit.php?user_id=' . $user_id) . '">' . __('View User Profile', 'wp-site-notifications') . '</a></p>';
+        $message .= '<p><a href="' . esc_url(admin_url('user-edit.php?user_id=' . $user_id)) . '">' . __('View User Profile', 'wp-site-notifications') . '</a></p>';
 
         $this->send_notification('user_role_changed', $subject, $message);
     }
@@ -228,7 +228,7 @@ class Admin_Notifications_Handler {
         $message .= '<li><strong>' . __('Network Wide:', 'wp-site-notifications') . '</strong> ' . ($network_wide ? __('Yes', 'wp-site-notifications') : __('No', 'wp-site-notifications')) . '</li>';
         $message .= '<li><strong>' . __('Date:', 'wp-site-notifications') . '</strong> ' . current_time('mysql') . '</li>';
         $message .= '</ul>';
-        $message .= '<p><a href="' . admin_url('plugins.php') . '">' . __('View Plugins', 'wp-site-notifications') . '</a></p>';
+        $message .= '<p><a href="' . esc_url(admin_url('plugins.php')) . '">' . __('View Plugins', 'wp-site-notifications') . '</a></p>';
 
         $this->send_notification('plugin_activated', $subject, $message);
     }
@@ -251,7 +251,7 @@ class Admin_Notifications_Handler {
         $message .= '<li><strong>' . __('Network Wide:', 'wp-site-notifications') . '</strong> ' . ($network_wide ? __('Yes', 'wp-site-notifications') : __('No', 'wp-site-notifications')) . '</li>';
         $message .= '<li><strong>' . __('Date:', 'wp-site-notifications') . '</strong> ' . current_time('mysql') . '</li>';
         $message .= '</ul>';
-        $message .= '<p><a href="' . admin_url('plugins.php') . '">' . __('View Plugins', 'wp-site-notifications') . '</a></p>';
+        $message .= '<p><a href="' . esc_url(admin_url('plugins.php')) . '">' . __('View Plugins', 'wp-site-notifications') . '</a></p>';
 
         $this->send_notification('plugin_deactivated', $subject, $message);
     }
@@ -302,7 +302,7 @@ class Admin_Notifications_Handler {
         }
         $message .= '</ul>';
         $message .= '<p><strong>' . __('Date:', 'wp-site-notifications') . '</strong> ' . current_time('mysql') . '</p>';
-        $message .= '<p><a href="' . admin_url('plugins.php') . '">' . __('View Plugins', 'wp-site-notifications') . '</a></p>';
+        $message .= '<p><a href="' . esc_url(admin_url('plugins.php')) . '">' . __('View Plugins', 'wp-site-notifications') . '</a></p>';
 
         $this->send_notification('plugin_updated', $subject, $message);
     }
@@ -334,7 +334,7 @@ class Admin_Notifications_Handler {
         }
         $message .= '</ul>';
         $message .= '<p><strong>' . __('Date:', 'wp-site-notifications') . '</strong> ' . current_time('mysql') . '</p>';
-        $message .= '<p><a href="' . admin_url('themes.php') . '">' . __('View Themes', 'wp-site-notifications') . '</a></p>';
+        $message .= '<p><a href="' . esc_url(admin_url('themes.php')) . '">' . __('View Themes', 'wp-site-notifications') . '</a></p>';
 
         $this->send_notification('theme_updated', $subject, $message);
     }
@@ -353,7 +353,7 @@ class Admin_Notifications_Handler {
         $message .= '<li><strong>' . __('New Theme:', 'wp-site-notifications') . '</strong> ' . esc_html($new_name) . '</li>';
         $message .= '<li><strong>' . __('Date:', 'wp-site-notifications') . '</strong> ' . current_time('mysql') . '</li>';
         $message .= '</ul>';
-        $message .= '<p><a href="' . admin_url('themes.php') . '">' . __('View Themes', 'wp-site-notifications') . '</a></p>';
+        $message .= '<p><a href="' . esc_url(admin_url('themes.php')) . '">' . __('View Themes', 'wp-site-notifications') . '</a></p>';
 
         $this->send_notification('theme_switched', $subject, $message);
     }
@@ -371,7 +371,7 @@ class Admin_Notifications_Handler {
         $message .= '<li><strong>' . __('New Version:', 'wp-site-notifications') . '</strong> ' . esc_html($wp_version) . '</li>';
         $message .= '<li><strong>' . __('Date:', 'wp-site-notifications') . '</strong> ' . current_time('mysql') . '</li>';
         $message .= '</ul>';
-        $message .= '<p><a href="' . admin_url('update-core.php') . '">' . __('View Updates', 'wp-site-notifications') . '</a></p>';
+        $message .= '<p><a href="' . esc_url(admin_url('update-core.php')) . '">' . __('View Updates', 'wp-site-notifications') . '</a></p>';
 
         $this->send_notification('core_updated', $subject, $message);
     }

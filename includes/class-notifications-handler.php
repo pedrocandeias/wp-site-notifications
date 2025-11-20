@@ -46,15 +46,15 @@ class Post_Notifications_Handler {
         // Check if we should send notification for this status change
         $notification_type = null;
 
-        if ($old_status !== 'pending' && $new_status === 'pending' && isset($enabled_notifications['pending']) && $enabled_notifications['pending'] == '1') {
+        if ($old_status !== 'pending' && $new_status === 'pending' && isset($enabled_notifications['pending']) && $enabled_notifications['pending'] === '1') {
             $notification_type = 'pending';
-        } elseif ($old_status !== 'publish' && $new_status === 'publish' && isset($enabled_notifications['published']) && $enabled_notifications['published'] == '1') {
+        } elseif ($old_status !== 'publish' && $new_status === 'publish' && isset($enabled_notifications['published']) && $enabled_notifications['published'] === '1') {
             $notification_type = 'published';
-        } elseif ($new_status === 'draft' && $old_status !== 'draft' && $old_status !== 'auto-draft' && isset($enabled_notifications['draft']) && $enabled_notifications['draft'] == '1') {
+        } elseif ($new_status === 'draft' && $old_status !== 'draft' && $old_status !== 'auto-draft' && isset($enabled_notifications['draft']) && $enabled_notifications['draft'] === '1') {
             $notification_type = 'draft';
-        } elseif ($new_status === 'future' && $old_status !== 'future' && isset($enabled_notifications['scheduled']) && $enabled_notifications['scheduled'] == '1') {
+        } elseif ($new_status === 'future' && $old_status !== 'future' && isset($enabled_notifications['scheduled']) && $enabled_notifications['scheduled'] === '1') {
             $notification_type = 'scheduled';
-        } elseif ($old_status === 'publish' && $new_status === 'publish' && isset($enabled_notifications['updated']) && $enabled_notifications['updated'] == '1') {
+        } elseif ($old_status === 'publish' && $new_status === 'publish' && isset($enabled_notifications['updated']) && $enabled_notifications['updated'] === '1') {
             // Rate limit updated notifications - only send once per hour per post
             $last_notification = get_transient('post_notification_sent_' . $post->ID);
             if ($last_notification !== false) {
@@ -62,7 +62,7 @@ class Post_Notifications_Handler {
             }
             $notification_type = 'updated';
             set_transient('post_notification_sent_' . $post->ID, time(), HOUR_IN_SECONDS);
-        } elseif ($new_status === 'trash' && isset($enabled_notifications['trashed']) && $enabled_notifications['trashed'] == '1') {
+        } elseif ($new_status === 'trash' && isset($enabled_notifications['trashed']) && $enabled_notifications['trashed'] === '1') {
             $notification_type = 'trashed';
         }
 
@@ -103,7 +103,7 @@ class Post_Notifications_Handler {
 
         // Get post author
         $author = get_userdata($post->post_author);
-        $author_name = $author ? $author->display_name : __('Unknown', 'post-notifications');
+        $author_name = $author ? $author->display_name : __('Unknown', 'wp-site-notifications');
 
         // Build email content
         $email_builder = new Post_Notifications_Email();
@@ -120,7 +120,10 @@ class Post_Notifications_Handler {
 
         // Send email to each recipient
         foreach ($recipients as $recipient) {
-            wp_mail($recipient->user_email, $subject, $message, $headers);
+            $result = wp_mail($recipient->user_email, $subject, $message, $headers);
+            if (!$result) {
+                error_log('WP Site Notifications: Failed to send email to ' . $recipient->user_email);
+            }
         }
     }
 
